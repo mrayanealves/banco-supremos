@@ -27,7 +27,7 @@ import javax.swing.JOptionPane;
  * @author Rayane
  */
 @SuppressWarnings("serial")
-public class BancoSistema2 extends javax.swing.JFrame {
+public class BancoSupremoApplication extends javax.swing.JFrame {
 	boolean gerenteLogado;
     int func_logado;
     private Saque telaSaque;
@@ -35,7 +35,7 @@ public class BancoSistema2 extends javax.swing.JFrame {
     private Transferencia telaTrans;
     private Extrato telaExtrato;
     
-    public BancoSistema2() {
+    public BancoSupremoApplication() {
         setResizable(false);
         initComponents();
         gerenteLogado = false;
@@ -1636,20 +1636,20 @@ public class BancoSistema2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BancoSistema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BancoSupremoApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BancoSistema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BancoSupremoApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BancoSistema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BancoSupremoApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BancoSistema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BancoSupremoApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BancoSistema2().setVisible(true);
+                new BancoSupremoApplication().setVisible(true);
             }
         });
     }
