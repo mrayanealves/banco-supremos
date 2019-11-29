@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package br.com.banco;
+package br.com.telas;
 
 import br.com.auxilio.LimparCampos;
 import br.com.controles.ControleConta;

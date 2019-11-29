@@ -29,7 +29,7 @@ Insert into GERENTE values (1, 400);
      PRIMARY KEY(cpf_cliente)    
  );
 -- 
- Insert into CLIENTE values ('700.724.284-73', 'Maria Rayane Ribeiro', 'Assentamento Paraná', 'F');
+ Insert into CLIENTE values ('700.000.000-00', 'Maria Rayane Ribeiro', 'Assentamento Paraná', 'F');
 -- 
  CREATE TABLE CONTA(
  	num_conta serial,
