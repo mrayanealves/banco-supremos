@@ -41,7 +41,7 @@ Insert into GERENTE values (1, 400);
      PRIMARY KEY(num_conta)
  );
 -- 
- Insert into CONTA (senha, cpf_cliente) values ('1234567', '700.724.284-73'); 
+ Insert into CONTA (senha, cpf_cliente) values ('1234567', '700.000.000-00'); 
 -- 
 CREATE TABLE REALIZA(
  	num_conta Int,

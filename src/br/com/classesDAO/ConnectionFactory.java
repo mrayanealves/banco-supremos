@@ -30,7 +30,7 @@ public class ConnectionFactory {
             } else if (flag == 2) {
                 DB_URL = "jdbc:oracle:thin:@localhost:8080";
                 DB_USER = "admin";
-                DB_PWD = "admin";
+                DB_PWD = "123";
             }
             if (conn == null) {
                 conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PWD);
