@@ -20,11 +20,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TabelaConsultaDAO {
 
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/Connection conn;
+	/*@ spec_public @*/Statement st;
+	/*@ spec_public @*/ResultSet rs;
     private DefaultTableModel modelo = new DefaultTableModel();
 
+    /*@ requires flag == 1;
+    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+	@*/
     public TabelaConsultaDAO(int flag, String NomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {

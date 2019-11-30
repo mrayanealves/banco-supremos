@@ -17,6 +17,11 @@ import javax.swing.JTextField;
  */
 public class ValidacoesCliente {
 
+	 /*@ requires cpf != null && !cpf.equals("");
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires sexo != null && !sexo.equals("");
+	@*/
     public void cadastrarCliente(String cpf, String nome, String endereco, String sexo) {
         ControleCliente cc = new ControleCliente();
         boolean existe;
@@ -30,6 +35,10 @@ public class ValidacoesCliente {
         }
     }
 
+    /*@ requires campoNomeCliente != null;
+    @ requires nome!= null;
+    @ requires campoCpfCliente != null;
+	@*/
     public boolean verificarCamposCadastro(JTextField campoNomeCliente, JTextField campoEnderecoCliente, JFormattedTextField campoCpfCliente) {
         VerificacaoCampos c = new VerificacaoCampos();
         boolean vazioTexto = false;
@@ -47,12 +56,18 @@ public class ValidacoesCliente {
         return sucesso;
     }
 
+    /*@ requires campoCpfCliente != null;
+	@*/
     public boolean verificarCampoCpf(JFormattedTextField campoCpfCliente) {
         VerificacaoCampos c = new VerificacaoCampos();
         boolean vazio = c.verificarCamposFormatados(campoCpfCliente);
         return vazio;
     }
 
+    /*@ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires cpf != null && !cpf.equals("");
+	@*/
     public void atualizarCiente(String nome, String endereco, String cpf) {
         ControleCliente cli = new ControleCliente();
         boolean sucesso = cli.atualizarCliente(nome, endereco, cpf);

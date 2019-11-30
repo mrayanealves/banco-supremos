@@ -15,12 +15,14 @@ import java.sql.SQLException;
  */
 public class ConnectionFactory {
 
-    Connection conn = null;
-    String DB_USER;
-    String DB_PWD;
-    String DB_URL;
-    String JDBC_DRIVER;
+	/*@ spec_public @*/Connection conn = null;
+	/*@ spec_public @*/String DB_USER;
+	/*@ spec_public @*/String DB_PWD;
+	/*@ spec_public @*/String DB_URL;
+	/*@ spec_public @*/String JDBC_DRIVER;
 
+	 /*@ requires flag == 1 || flag == 2;
+	@*/
     public Connection getConnection(int flag) {
         try {
             if (flag == 1) {
@@ -41,6 +43,8 @@ public class ConnectionFactory {
         return conn;
     }
 
+    /*@ requires conn == null;
+   	@*/
     public void closeConn() {
         try {
             if (!conn.isClosed()) {

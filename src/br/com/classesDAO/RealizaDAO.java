@@ -17,10 +17,13 @@ import br.com.models.Realiza;
  * @author Rayane
  */
 public class RealizaDAO {
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/Connection conn;
+	/*@ spec_public @*/Statement st;
+	/*@ spec_public @*/ResultSet rs;
 
+	/*@ requires flag == 1;
+    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+	@*/
     public RealizaDAO(int flag, String NomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {

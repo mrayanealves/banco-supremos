@@ -18,10 +18,15 @@ import br.com.models.Cliente;
  */
 public class ClienteDAO {
 
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/Connection conn;
+	/*@ spec_public @*/Statement st;
+	/*@ spec_public @*/ResultSet rs;
 
+	/*@ requires flag == 1;
+    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ assignable conn;
+    @ assignable st;
+	@*/
     public ClienteDAO(int flag, String NomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
@@ -34,6 +39,9 @@ public class ClienteDAO {
 
     }
 
+    /*@ requires c != null;
+    @ assignable st;
+	@*/
     public boolean insereCliente(Cliente c) {
         try {
             String sql = "INSERT INTO CLIENTE VALUES('" + c.getCpf_cliente() + "', '" + c.getNome() + "', '" 
@@ -48,6 +56,10 @@ public class ClienteDAO {
         }
     }
 
+    /*@ requires c != null;
+    @ requires cpf_cliente!= null && cpf_cliente.equals("");
+    @ assignable st;
+	@*/
     public boolean updateCliente(Cliente c, String cpf_cliente) {
         try {
             String sql = "UPDATE CLIENTE "
@@ -63,6 +75,10 @@ public class ClienteDAO {
         }
     }
 
+    /*@ requires cpf_cliente!= null && cpf_cliente.equals("");
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public Cliente encontrarCliente(String cpf_cliente) {
         Cliente c = null;
         try {
@@ -85,6 +101,9 @@ public class ClienteDAO {
         return c;
     }
 
+    /* @ assignable rs;
+    @ assignable st;
+	@*/
     public void MostrarClientes() {
         Cliente c = null;
 
@@ -108,6 +127,13 @@ public class ClienteDAO {
 
     }
 
+    /* @ assignable rs;
+    @ assignable st;
+    @ assignable conn;
+    @ ensures rs == null;
+    @ ensures st == null;
+    @ ensures conn == null;
+	@*/
     public void FecharConexoes() {
         try {
             if (rs != null) {

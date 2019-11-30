@@ -306,7 +306,7 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(cadastrarNovaConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 180, 70));
 
-        realizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperaÃ§Ãµes.png"))); // NOI18N
+        realizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperações.png"))); // NOI18N
         realizarOperacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 realizarOperacoesActionPerformed(evt);

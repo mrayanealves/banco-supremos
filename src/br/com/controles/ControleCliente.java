@@ -16,8 +16,14 @@ import javax.swing.JOptionPane;
  */
 public class ControleCliente {
 
-    ClienteDAO cli;
+	/*@ spec_public @*/ ClienteDAO cli;
 
+    /*@ requires cpf != null && !cpf.equals("");
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires sexo != null && !sexo.equals("");
+    @ assignable cli;
+	@*/
     public void cadastrarCliente(String cpf, String nome, String endereco, String sexo) {
         cli = new ClienteDAO(1, "BANCO_SUPREMOS");
         Cliente c = new Cliente();
@@ -39,6 +45,9 @@ public class ControleCliente {
         cli.FecharConexoes();
     }
 
+    /*@ requires cpf != null && !cpf.equals("");
+    @ assignable cli;
+	@*/
     public Cliente encontrarCliente(String cpf) {
         cli = new ClienteDAO(1, "BANCO_SUPREMOS");
         Cliente c = null;
@@ -48,6 +57,12 @@ public class ControleCliente {
         return c;
     }
 
+    /*
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires cpf != null && !cpf.equals("");
+    @ assignable cli;
+	@*/
     public boolean atualizarCliente(String nome, String endereco, String cpf) {
         cli = new ClienteDAO(1, "BANCO_SUPREMOS");
         boolean sucesso = false;
@@ -61,6 +76,10 @@ public class ControleCliente {
         return sucesso;
     }
 
+    /*
+    @ requires cpf_cliente != null && !cpf_cliente.equals("");
+    @ assignable cli;
+	@*/
     public boolean existeCliente(String cpf_cliente) {
         cli = new ClienteDAO(1, "BANCO_SUPREMOS");
         boolean existe = false;

@@ -21,6 +21,8 @@ import javax.swing.JTextField;
  */
 public class ValidacoesOperacoes {
 
+	/*@ requires campoNumConta != null;
+	@*/
     public boolean validarCamposOperacoes(JTextField campoNumConta) {
         VerificacaoCampos v = new VerificacaoCampos();
         LimparCampos l = new LimparCampos();
@@ -37,6 +39,10 @@ public class ValidacoesOperacoes {
         return sucesso;
     }
 
+    /*@ requires campoNumConta != null;
+    @ requires campoSenhaConta != null;
+    @ requires campoValorSaque != null;
+	@*/
     public boolean validarCamposOperacoes(JTextField campoNumConta, JPasswordField campoSenhaConta, JTextField campoValorSaque) {
         VerificacaoCampos v = new VerificacaoCampos();
         LimparCampos l = new LimparCampos();
@@ -57,6 +63,11 @@ public class ValidacoesOperacoes {
         return sucesso;
     }
 
+    /*@ requires campoNumConta != null;
+    @ requires campoNumConta2 != null;
+    @ requires campoSenhaConta != null;
+    @ requires campoValorSaque != null;
+	@*/
     public boolean validarCamposOperacoes(JTextField campoNumConta, JTextField campoNumConta2, JPasswordField campoSenhaConta, JTextField campoValorSaque) {
         VerificacaoCampos v = new VerificacaoCampos();
         LimparCampos l = new LimparCampos();
@@ -77,6 +88,9 @@ public class ValidacoesOperacoes {
         return sucesso;
     }
 
+    /*@ requires campoNumConta != null;
+    @ requires campoValor != null;
+	@*/
     public boolean validarCamposOperacoes(JTextField campoNumConta, JTextField campoValor) {
         VerificacaoCampos v = new VerificacaoCampos();
         LimparCampos l = new LimparCampos();
@@ -108,13 +122,13 @@ public class ValidacoesOperacoes {
                     r.realizarSaque(valor, num);
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "O valor que deseja sacar √© acima do valor que possui na sua conta.");
+                    JOptionPane.showMessageDialog(null, "O valor que deseja sacar È acima do valor que possui na sua conta.");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Senha incorreta!");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Conta n√£o existente!");
+            JOptionPane.showMessageDialog(null, "Conta n„o existente!");
         }
     }
 
@@ -126,10 +140,15 @@ public class ValidacoesOperacoes {
             ControleRealizaOperacoes r = new ControleRealizaOperacoes();
             r.realizaDeposito(valor, num);
         } else {
-            JOptionPane.showMessageDialog(null, "Conta n√£o existente!");
+            JOptionPane.showMessageDialog(null, "Conta n„o existente!");
         }
     }
 
+    /*@ requires numDestinatario != null && !numDestinatario.equals("");
+    @ requires numDestino!= null && !numDestino.equals("");
+    @ requires senhaDestinatario != null && !senhaDestinatario.equals("");
+    @ requires valor != null && !valor.equals("");
+	@*/
     public void realizarTransferencia(String numDestinatario, String numDestino, String senhaDestinatario, String valor) {
         ControleConta conta = new ControleConta();
         ControleRealizaOperacoes c = new ControleRealizaOperacoes();
@@ -146,19 +165,22 @@ public class ValidacoesOperacoes {
                     if (valorValido == true) {
                         c.realizaTransferencia(numDestinatario, numDestino, valor);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Valor inv√°lido!");
+                        JOptionPane.showMessageDialog(null, "Valor inv·lido!");
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Senha incorreta!");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "A conta de destino n√£o existe!\nVerifique o c√≥digo digitado e tente novamente.");
+                JOptionPane.showMessageDialog(null, "A conta de destino n√£o existe!\nVerifique o cÛdigo digitado e tente novamente.");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Essa conta n√£o existe!\nVerifique o c√≥digo digitado e tente novamente.");
+            JOptionPane.showMessageDialog(null, "Essa conta n„o existe!\nVerifique o cÛdigo digitado e tente novamente.");
         }
     }
 
+    /*@ requires num != null && !num.equals("");
+    @ requires tabela != null;
+	@*/
     public void realizarExtrato(String num, JTable tabela) {
         ControleConta conta = new ControleConta();
         ControleRealizaOperacoes c = new ControleRealizaOperacoes();
@@ -167,7 +189,7 @@ public class ValidacoesOperacoes {
         if (existe == true) {
             c.realizarExtrato(num, tabela);
         } else {
-            JOptionPane.showMessageDialog(null, "Conta n√£o existente!");
+            JOptionPane.showMessageDialog(null, "Conta n„o existente!");
         }
     }
 
