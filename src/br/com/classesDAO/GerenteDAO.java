@@ -24,9 +24,9 @@ public class GerenteDAO {
 	/*@ spec_public @*/ResultSet rs;
 
 	/*@ requires flag == 1;
-    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
 	@*/
-    public GerenteDAO(int flag, String NomeBanco) {
+    public GerenteDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();

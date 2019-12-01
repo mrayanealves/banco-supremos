@@ -29,7 +29,7 @@ public class ValidacoesFuncionario {
     @ requires login != null && !login.equals("");
     @ requires senha != null && !senha.equals("");
     @ requires bon != null && !bon.equals("");
-    @ requires gerente != null;
+    @ requires gerente == true || gerente == false;
 	@*/
     public void cadastrarFuncionario(String cpf, String nome, String endereco, String sexo, String salario, String cargaH, String login, String senha, String bon, boolean gerente) {
         ControleFuncionario cc = new ControleFuncionario();
@@ -61,7 +61,7 @@ public class ValidacoesFuncionario {
 	@ requires campoSalarioFuncionario != null;
 	@ requires campoCargaHFuncionario != null;
 	@ requires campoLoginFuncionario != null;
-	@ requires campoSenhaFuncionari != null;
+	@ requires campoSenhaFuncionario != null;
 	@ requires campoCpfFuncionario != null;
 	@*/
     public boolean validarCamposCadastro(JTextField campoNomeFuncionario, JTextField campoEnderecoFuncionario,

@@ -26,9 +26,9 @@ public class TabelaConsultaDAO {
     private DefaultTableModel modelo = new DefaultTableModel();
 
     /*@ requires flag == 1;
-    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
 	@*/
-    public TabelaConsultaDAO(int flag, String NomeBanco) {
+    public TabelaConsultaDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();

@@ -22,9 +22,9 @@ public class RealizaDAO {
 	/*@ spec_public @*/ResultSet rs;
 
 	/*@ requires flag == 1;
-    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
 	@*/
-    public RealizaDAO(int flag, String NomeBanco) {
+    public RealizaDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();

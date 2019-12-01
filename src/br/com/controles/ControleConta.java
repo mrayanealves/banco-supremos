@@ -69,7 +69,7 @@ public class ControleConta {
         return c;
     }
 
-    /*@ requires num != null && !num.equals("");
+    /*@ requires num_conta != null && !num_conta.equals("");
      @ requires c != null;
      @ assignable conta;
 	 @*/

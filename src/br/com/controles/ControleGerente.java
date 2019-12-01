@@ -16,8 +16,8 @@ public class ControleGerente {
 
 	/*@ spec_public @*/GerenteDAO ger;
 
-	/*@ requires cod_func != null && !cod_func.equals("");
-    @ requires valor!= null && !valor.equals("");
+	/*@ requires cod_func > 0;
+    @ requires valor != null && !valor.equals("");
     @ assignable ger;
 	@*/
     public void cadastrarGerente(int cod_func, String valor) {
@@ -33,7 +33,7 @@ public class ControleGerente {
         ger.FecharConexoes();
     }
 
-    /*@ requires cod_func != null && !cod_func.equals("");
+    /*@ requires cod_func > 0;
     @ assignable ger;
 	@*/
     public boolean ehGerente(int cod_func) {

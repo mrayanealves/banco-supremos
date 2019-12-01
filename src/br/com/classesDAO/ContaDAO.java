@@ -18,16 +18,16 @@ import br.com.models.Conta;
  */
 public class ContaDAO {
 
-	/*@ spec_public @*/Connection conn;
-	/*@ spec_public @*/Statement st;
-	/*@ spec_public @*/ResultSet rs;
+	/*@ spec_public @*/ Connection conn;
+	/*@ spec_public @*/ Statement  st;
+	/*@ spec_public @*/ ResultSet  rs;
 
 	/*@ requires flag == 1;
-    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
     @ assignable conn;
     @ assignable st;
 	@*/
-    public ContaDAO(int flag, String NomeBanco) {
+    public ContaDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();
@@ -55,7 +55,7 @@ public class ContaDAO {
         }
     }
 
-    /*@ requires num_conta != null && num_conta > 0;
+    /*@ requires num_conta > 0;
     @ assignable st;
 	@*/
     public boolean removeConta(int num_conta) {
@@ -73,7 +73,7 @@ public class ContaDAO {
     }
 
     /*@ requires g != null;
-    @ requires num_conta != null && num_conta > 0;
+    @ requires num_conta > 0;
     @ assignable st;
 	@*/
     public boolean updateConta(Conta g, int num_conta) {
@@ -91,7 +91,7 @@ public class ContaDAO {
         }
     }
 
-    /*@ requires num_conta != null && num_conta > 0;
+    /*@ requires num_conta > 0;
     @ assignable st;
     @ assignable rs;
 	@*/
@@ -118,7 +118,7 @@ public class ContaDAO {
         return g;
     }
 
-    /*@ requires num_conta != null && num_conta > 0;
+    /*@ requires num_conta > 0;
     @ assignable st;
     @ assignable rs;
 	@*/
@@ -140,7 +140,7 @@ public class ContaDAO {
         return saldo;
     }
 
-    /*@ requires senha != null && senha > 0;
+    /*@ requires senha != null && senha != "";
     @ assignable st;
     @ assignable rs;
 	@*/

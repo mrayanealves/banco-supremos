@@ -36,7 +36,7 @@ public class ValidacoesCliente {
     }
 
     /*@ requires campoNomeCliente != null;
-    @ requires nome!= null;
+    @ requires campoEnderecoCliente != null;
     @ requires campoCpfCliente != null;
 	@*/
     public boolean verificarCamposCadastro(JTextField campoNomeCliente, JTextField campoEnderecoCliente, JFormattedTextField campoCpfCliente) {

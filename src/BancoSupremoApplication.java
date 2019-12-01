@@ -8,13 +8,12 @@
 import br.com.controles.ControleCliente;
 import br.com.controles.ControleFuncionario;
 import br.com.controles.ControleGerente;
-import br.com.models.Cliente;
-import br.com.models.Funcionario;
+import br.com.models.*;
 import br.com.telas.Deposito;
 import br.com.telas.Extrato;
 import br.com.telas.Saque;
 import br.com.telas.Transferencia;
-import br.com.auxilio.LimparCampos;
+import br.com.auxilio.*;
 import br.com.validacoes.ValidacoesCliente;
 import br.com.validacoes.ValidacoesConta;
 import br.com.validacoes.ValidacoesFuncionario;
@@ -306,7 +305,7 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(cadastrarNovaConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 180, 70));
 
-        realizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperações.png"))); // NOI18N
+        realizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperaï¿½ï¿½es.png"))); // NOI18N
         realizarOperacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 realizarOperacoesActionPerformed(evt);

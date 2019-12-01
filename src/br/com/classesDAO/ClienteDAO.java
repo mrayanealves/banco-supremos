@@ -23,11 +23,11 @@ public class ClienteDAO {
 	/*@ spec_public @*/ResultSet rs;
 
 	/*@ requires flag == 1;
-    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMOS");
     @ assignable conn;
     @ assignable st;
 	@*/
-    public ClienteDAO(int flag, String NomeBanco) {
+    public ClienteDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();

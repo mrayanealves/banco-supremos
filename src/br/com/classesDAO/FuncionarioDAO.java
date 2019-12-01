@@ -23,9 +23,9 @@ public class FuncionarioDAO {
 	/*@ spec_public @*/ResultSet rs;
 
 	/*@ requires flag == 1;
-    @ requires nomeBanco!= null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
 	@*/
-    public FuncionarioDAO(int flag, String NomeBanco) {
+    public FuncionarioDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();
@@ -37,7 +37,7 @@ public class FuncionarioDAO {
 
     }
     
-    /*@ requires g != null;
+    /*@ requires f != null;
     @ assignable st;
 	@*/
     public boolean insereFuncionario(Funcionario f) {
@@ -54,7 +54,7 @@ public class FuncionarioDAO {
         }
     }
 
-    /*@ requires cod_func != null;
+    /*@ requires cod_func >= 0;
     @ assignable st;
 	@*/
     public boolean removeFuncionario(int cod_func) {
@@ -72,7 +72,7 @@ public class FuncionarioDAO {
     }
 
     /*@ requires f != null;
-    @ requires cond_func != null;
+    @ requires cod_func >= 0;
     @ assignable st;
 	@*/
     public boolean updateFuncionario(Funcionario f, int cod_func) {
@@ -94,7 +94,7 @@ public class FuncionarioDAO {
     }
 
     /*
-    @ requires cond_func != null;
+    @ requires cond_func >= 0;
     @ assignable st;
     @ assignable rs;
 	@*/
@@ -127,7 +127,7 @@ public class FuncionarioDAO {
     }
 
     /*@
-    @ requires cpf!= null && cpf.equals("");
+    @ requires cpf != null && !cpf.equals("");
     @ assignable st;
     @ assignable rs;
 	@*/
@@ -152,8 +152,8 @@ public class FuncionarioDAO {
     }
 
     /*@
-    @ requires login!= null && login.equals("");
-    @ requires senha!= null && senha.equals("");
+    @ requires login != null && !login.equals("");
+    @ requires senha != null && !senha.equals("");
     @ assignable st;
     @ assignable rs;
 	@*/
@@ -178,7 +178,7 @@ public class FuncionarioDAO {
     }
 
     /*@
-    @ requires login!= null && login.equals("");
+    @ requires login != null && !login.equals("");
     @ assignable st;
     @ assignable rs;
 	@*/
