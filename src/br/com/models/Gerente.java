@@ -11,6 +11,7 @@ package br.com.models;
  * @author Rayane
  */
 public class Gerente {
+	
     private int cod_func;
     private float bonificacao;
 

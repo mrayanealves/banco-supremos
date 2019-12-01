@@ -23,6 +23,7 @@ public class ControleCliente {
     @ requires endereco != null && !endereco.equals("");
     @ requires sexo != null && !sexo.equals("");
     @ assignable cli;
+    @ ensures cli.encontrarCliente(cpf) != null;
 	@*/
     public void cadastrarCliente(String cpf, String nome, String endereco, String sexo) {
         cli = new ClienteDAO(1, "BANCO_SUPREMOS");

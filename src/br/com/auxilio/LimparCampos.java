@@ -16,7 +16,7 @@ import javax.swing.JTextField;
  * @author Rayane
  */
 public class LimparCampos {
-    
+	
     public void limparCamposDeTexto(JTextField... campo){
         for (int i = 0; i < campo.length; i++) {
             campo[i].setText("");

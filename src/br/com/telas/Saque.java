@@ -56,7 +56,8 @@ public class Saque extends javax.swing.JDialog {
         painelSaque.setPreferredSize(new java.awt.Dimension(502, 379));
 
         botaoSacar.setBackground(new java.awt.Color(255, 255, 255));
-        botaoSacar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Saque.png"))); // NOI18N
+        //botaoSacar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Saque.png"))); // NOI18N
+        botaoSacar.setText("Sacar");
         botaoSacar.setBorder(null);
         botaoSacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,9 +71,9 @@ public class Saque extends javax.swing.JDialog {
 
         jLabel8.setText("Senha do Conta: ");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
+        //jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
 
         javax.swing.GroupLayout painelSaqueLayout = new javax.swing.GroupLayout(painelSaque);
         painelSaque.setLayout(painelSaqueLayout);
