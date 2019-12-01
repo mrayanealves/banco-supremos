@@ -12,6 +12,7 @@ import br.com.classesDAO.FuncionarioDAO;
  * @author Rayane
  */
 public class VerificacaoLogin {
+	
     FuncionarioDAO func;
     
     public boolean verificarLogin(String login, String senha){

@@ -14,6 +14,7 @@ import javax.swing.JTextField;
  * @author Rayane
  */
 public class VerificacaoCampos{
+	
     private boolean vazio;
     
     public boolean verificarCamposTexto(JTextField... campos){

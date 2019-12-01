@@ -57,17 +57,18 @@ public class Deposito extends javax.swing.JDialog {
         jLabel2.setText("Valor a ser depositado: ");
 
         botaoDepositar.setBackground(new java.awt.Color(255, 255, 255));
-        botaoDepositar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Depósito.png"))); // NOI18N
+        //botaoDepositar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Depósito.png"))); // NOI18N
         botaoDepositar.setBorder(null);
+        botaoDepositar.setText("Depositar");
         botaoDepositar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoDepositarActionPerformed(evt);
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
+        //jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
 
         javax.swing.GroupLayout painelDepositoLayout = new javax.swing.GroupLayout(painelDeposito);
         painelDeposito.setLayout(painelDepositoLayout);

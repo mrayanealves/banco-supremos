@@ -65,17 +65,18 @@ public class Transferencia extends javax.swing.JDialog {
         jLabel4.setText("Valor da tranferência: ");
 
         botaoTransferir.setBackground(new java.awt.Color(255, 255, 255));
-        botaoTransferir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Transferência.png"))); // NOI18N
+        //botaoTransferir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Transferência.png"))); // NOI18N
         botaoTransferir.setBorder(null);
+        botaoTransferir.setText("Transferir");
         botaoTransferir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoTransferirActionPerformed(evt);
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
+        //jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
         jLabel7.setToolTipText("");
 
         javax.swing.GroupLayout painelRealizarTranferenciaLayout = new javax.swing.GroupLayout(painelRealizarTranferencia);

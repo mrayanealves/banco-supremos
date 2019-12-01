@@ -15,7 +15,7 @@ import br.com.models.Gerente;
 public class ControleGerente {
 
     GerenteDAO ger;
-
+    
     public void cadastrarGerente(int cod_func, String valor) {
         ger = new GerenteDAO(1, "BANCO_SUPREMOS");
         Gerente g = new Gerente();

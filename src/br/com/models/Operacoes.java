@@ -10,6 +10,7 @@ package br.com.models;
  * @author Rayane
  */
 public class Operacoes {
+	
     private int num_oper;
     private boolean saque;
     private boolean deposito;

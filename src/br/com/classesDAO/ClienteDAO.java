@@ -22,7 +22,7 @@ public class ClienteDAO {
     Statement st;
     ResultSet rs;
 
-    public ClienteDAO(int flag, String NomeBanco) {
+    public /*@ pure @*/ ClienteDAO(int flag, String NomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();
@@ -34,7 +34,7 @@ public class ClienteDAO {
 
     }
 
-    public boolean insereCliente(Cliente c) {
+    public /*@ pure @*/ boolean insereCliente(Cliente c) {
         try {
             String sql = "INSERT INTO CLIENTE VALUES('" + c.getCpf_cliente() + "', '" + c.getNome() + "', '" 
                          + c.getEndereco() +  "','" + c.getSexo() + "')";
@@ -48,7 +48,7 @@ public class ClienteDAO {
         }
     }
 
-    public boolean updateCliente(Cliente c, String cpf_cliente) {
+    public /*@ pure @*/ boolean updateCliente(Cliente c, String cpf_cliente) {
         try {
             String sql = "UPDATE CLIENTE "
                     + "SET nome = '" + c.getNome() + "', endereco = '" + c.getEndereco() +"' "
@@ -63,7 +63,7 @@ public class ClienteDAO {
         }
     }
 
-    public Cliente encontrarCliente(String cpf_cliente) {
+    public /*@ pure @*/ Cliente encontrarCliente(String cpf_cliente) {
         Cliente c = null;
         try {
             String sql = "SELECT * FROM CLIENTE "
@@ -85,7 +85,7 @@ public class ClienteDAO {
         return c;
     }
 
-    public void MostrarClientes() {
+    public /*@ pure @*/ void MostrarClientes() {
         Cliente c = null;
 
         try {
@@ -108,7 +108,7 @@ public class ClienteDAO {
 
     }
 
-    public void FecharConexoes() {
+    public /*@ pure @*/ void FecharConexoes() {
         try {
             if (rs != null) {
                 rs.close();

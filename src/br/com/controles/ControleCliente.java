@@ -16,8 +16,15 @@ import javax.swing.JOptionPane;
  */
 public class ControleCliente {
 
-    ClienteDAO cli;
+	/*@ spec_public @*/ ClienteDAO cli;
 
+    /*@ requires cpf != null && !cpf.equals("");
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires sexo != null && !sexo.equals("");
+    @ assignable cli;
+    @ ensures cli.encontrarCliente(cpf) != null;
+	@*/
     public void cadastrarCliente(String cpf, String nome, String endereco, String sexo) {
         cli = new ClienteDAO(1, "BANCO_SUPREMOS");
         Cliente c = new Cliente();

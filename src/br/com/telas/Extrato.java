@@ -75,7 +75,8 @@ public class Extrato extends javax.swing.JDialog {
         });
 
         botaoExtrato.setBackground(new java.awt.Color(255, 255, 255));
-        botaoExtrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Extrato.png"))); // NOI18N
+        //botaoExtrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Extrato.png"))); // NOI18N
+        botaoExtrato.setText("Extrato");
         botaoExtrato.setBorder(null);
         botaoExtrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +86,7 @@ public class Extrato extends javax.swing.JDialog {
 
         labelSaldo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
+        //jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
