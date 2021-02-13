@@ -18,11 +18,16 @@ import br.com.models.Conta;
  */
 public class ContaDAO {
 
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/ Connection conn;
+	/*@ spec_public @*/ Statement  st;
+	/*@ spec_public @*/ ResultSet  rs;
 
-    public ContaDAO(int flag, String NomeBanco) {
+	/*@ requires flag == 1;
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
+    @ assignable conn;
+    @ assignable st;
+	@*/
+    public ContaDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();
@@ -34,6 +39,9 @@ public class ContaDAO {
 
     }
 
+    /*@ requires g != null;
+    @ assignable st;
+	@*/
     public boolean insereConta(Conta g) {
         try {
             String sql = "INSERT INTO CONTA (senha, saldo, cpf_cliente) VALUES('" + g.getSenha() + "', " + g.getSaldo() + ", '" + g.getCpf_cliente() + "')";
@@ -47,6 +55,9 @@ public class ContaDAO {
         }
     }
 
+    /*@ requires num_conta > 0;
+    @ assignable st;
+	@*/
     public boolean removeConta(int num_conta) {
         try {
             String sql = "DELETE FROM CONTA "
@@ -61,6 +72,10 @@ public class ContaDAO {
         }
     }
 
+    /*@ requires g != null;
+    @ requires num_conta > 0;
+    @ assignable st;
+	@*/
     public boolean updateConta(Conta g, int num_conta) {
         try {
             String sql = "UPDATE CONTA "
@@ -76,6 +91,10 @@ public class ContaDAO {
         }
     }
 
+    /*@ requires num_conta > 0;
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public Conta encontrarConta(int num_conta) {
         Conta g = null;
         try {
@@ -99,6 +118,10 @@ public class ContaDAO {
         return g;
     }
 
+    /*@ requires num_conta > 0;
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public double encontrarSaldo(int num_conta) {
         double saldo = 0;
         try {
@@ -117,6 +140,10 @@ public class ContaDAO {
         return saldo;
     }
 
+    /*@ requires senha != null && senha != "";
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public int encontrarCodigoConta(String senha) {
         Conta c;
         int cod = 0;
@@ -137,6 +164,13 @@ public class ContaDAO {
         return cod;
     }
 
+    /* @ assignable rs;
+    @ assignable st;
+    @ assignable conn;
+    @ ensures rs == null;
+    @ ensures st == null;
+    @ ensures conn == null;
+	@*/
     public void FecharConexoes() {
         try {
             if (rs != null) {

@@ -22,9 +22,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControleRealizaOperacoes {
 
-    RealizaDAO real;
-    private int num_oper;
+	/*@ spec_public @*/RealizaDAO real;
+    private /*@ spec_public @*/int num_oper;
 
+    /*@ requires valor != null && !valor.equals("");
+    @ requires num!= null && !num.equals("");
+    @ assignable num_oper, real;
+	@*/
     public void realizarSaque(String valor, String num) {
         int num_conta = Integer.parseInt(num);
         float valorSaque = Float.parseFloat(valor);
@@ -60,6 +64,10 @@ public class ControleRealizaOperacoes {
         real.FecharConexoes();
     }
 
+    /*@ requires valor != null && !valor.equals("");
+    @ requires num!= null && !num.equals("");
+    @ assignable num_oper, real;
+	@*/
     public void realizaDeposito(String valor, String num) {
         int num_conta = Integer.parseInt(num);
         float valorDeposito =  Float.parseFloat(valor);
@@ -95,6 +103,11 @@ public class ControleRealizaOperacoes {
         real.FecharConexoes();
     }
 
+    /*@ requires numDestinatario != null && !numDestinatario.equals("");
+    @ requires numDestino!= null && !numDestino.equals("");
+    @ requires valor!= null && !valor.equals("");
+    @ assignable num_oper, real;
+	@*/
     public void realizaTransferencia(String numDestinatario, String numDestino, String valor) {
         int conta_destinatario = Integer.parseInt(numDestinatario);
         int conta_destino = Integer.parseInt(numDestino);
@@ -133,8 +146,13 @@ public class ControleRealizaOperacoes {
         sucesso = real.insereRealizacao(r);
         real.FecharConexoes();
     }
-    TabelaConsultaDAO tb;
+    
+    /*@ spec_public @*/TabelaConsultaDAO tb;
 
+    /*@ requires num != null && !num.equals("");
+    @ requires tabela!= null;
+    @ assignable tb;
+	@*/
     public void realizarExtrato(String num, JTable tabela) {
         int numero = Integer.parseInt(num);
         tb = new TabelaConsultaDAO(1, "BANCO_SUPREMOS");

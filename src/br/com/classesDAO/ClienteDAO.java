@@ -18,11 +18,16 @@ import br.com.models.Cliente;
  */
 public class ClienteDAO {
 
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/Connection conn;
+	/*@ spec_public @*/Statement st;
+	/*@ spec_public @*/ResultSet rs;
 
-    public ClienteDAO(int flag, String NomeBanco) {
+  /*@ requires flag == 1;
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMOS");
+    @ assignable conn;
+    @ assignable st;
+	@*/
+    public /*@ pure @*/ ClienteDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();
@@ -34,7 +39,10 @@ public class ClienteDAO {
 
     }
 
-    public boolean insereCliente(Cliente c) {
+  /*@ requires c != null;
+    @ assignable st;
+	@*/
+    public /*@ pure @*/ boolean insereCliente(Cliente c) {
         try {
             String sql = "INSERT INTO CLIENTE VALUES('" + c.getCpf_cliente() + "', '" + c.getNome() + "', '" 
                          + c.getEndereco() +  "','" + c.getSexo() + "')";
@@ -48,7 +56,11 @@ public class ClienteDAO {
         }
     }
 
-    public boolean updateCliente(Cliente c, String cpf_cliente) {
+  /*@ requires c != null;
+    @ requires cpf_cliente!= null && cpf_cliente.equals("");
+    @ assignable st;
+	@*/
+    public /*@ pure @*/ boolean updateCliente(Cliente c, String cpf_cliente) {
         try {
             String sql = "UPDATE CLIENTE "
                     + "SET nome = '" + c.getNome() + "', endereco = '" + c.getEndereco() +"' "
@@ -63,7 +75,11 @@ public class ClienteDAO {
         }
     }
 
-    public Cliente encontrarCliente(String cpf_cliente) {
+  /*@ requires cpf_cliente!= null && cpf_cliente.equals("");
+    @ assignable st;
+    @ assignable rs;
+	@*/
+    public /*@ pure @*/ Cliente encontrarCliente(String cpf_cliente) {
         Cliente c = null;
         try {
             String sql = "SELECT * FROM CLIENTE "
@@ -85,9 +101,11 @@ public class ClienteDAO {
         return c;
     }
 
-    public void MostrarClientes() {
+  /* @ assignable rs;
+    @ assignable st;
+	@*/
+    public /*@ pure @*/ void MostrarClientes() {
         Cliente c = null;
-
         try {
             String sql = "SELECT * FROM CLIENTE";
             st = conn.createStatement();
@@ -108,7 +126,14 @@ public class ClienteDAO {
 
     }
 
-    public void FecharConexoes() {
+  /* @ assignable rs;
+    @ assignable st;
+    @ assignable conn;
+    @ ensures rs == null;
+    @ ensures st == null;
+    @ ensures conn == null;
+	@*/
+    public  /*@ pure @*/ void FecharConexoes() {
         try {
             if (rs != null) {
                 rs.close();

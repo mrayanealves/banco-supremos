@@ -19,6 +19,9 @@ import javax.swing.JTextField;
  */
 public class ValidacoesConta {
 
+	/*@ requires campoCpfClienteConta != null;
+	@ requires campoSenhaConta != null;
+	@*/
     public boolean validarCamposCadastro(JFormattedTextField campoCpfClienteConta, JPasswordField campoSenhaConta) {
 
         VerificacaoCampos c = new VerificacaoCampos();
@@ -38,6 +41,9 @@ public class ValidacoesConta {
         return sucesso;
     }
 
+    /*@ requires campoCpfClienteConta != null;
+	@ requires campoSenhaConta != null;
+	@*/
     public void cadastrarConta(JFormattedTextField campoCpfClienteConta, JPasswordField campoSenhaConta) {
 
         ControleConta v = new ControleConta();

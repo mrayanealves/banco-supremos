@@ -14,8 +14,12 @@ import javax.swing.JTextField;
  * @author Rayane
  */
 public class VerificacaoCampos{
-    private boolean vazio;
+
+  private /*@ spec_public @*/boolean vazio;
     
+    /*@ requires campos != null;
+    @ assignable vazio;
+	  @*/
     public boolean verificarCamposTexto(JTextField... campos){
         for (int i = 0; i < campos.length; i++) {
             if (campos[i].getText().equals("")) {
@@ -28,6 +32,9 @@ public class VerificacaoCampos{
         return vazio;
     }
     
+    /*@ requires senhas != null;
+    @ assignable vazio;
+	@*/
     public boolean verificarCamposSenha(JPasswordField... senhas){
         boolean vazio = false;
         
@@ -41,6 +48,9 @@ public class VerificacaoCampos{
         return vazio;
     }
     
+    /*@ requires campos != null;
+    @ assignable vazio;
+	@*/
     public boolean verificarCamposFormatados(JFormattedTextField... campos){
         boolean vazio = false;
         

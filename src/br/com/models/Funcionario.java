@@ -10,6 +10,7 @@ package br.com.models;
  * @author Rayane
  */
 public class Funcionario {
+	
     private int cod_func;
     private String cpf_funcionario;
     private String nome;

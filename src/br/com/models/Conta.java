@@ -11,6 +11,7 @@ package br.com.models;
  * @author Rayane
  */
 public class Conta {
+	
     private int num_conta;
     private String senha;
     private float saldo;

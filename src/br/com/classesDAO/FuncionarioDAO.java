@@ -18,11 +18,14 @@ import br.com.models.Funcionario;
  */
 public class FuncionarioDAO {
 
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/Connection conn;
+	/*@ spec_public @*/Statement st;
+	/*@ spec_public @*/ResultSet rs;
 
-    public FuncionarioDAO(int flag, String NomeBanco) {
+	/*@ requires flag == 1;
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
+	@*/
+    public FuncionarioDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();
@@ -33,7 +36,10 @@ public class FuncionarioDAO {
         }
 
     }
-
+    
+    /*@ requires f != null;
+    @ assignable st;
+	@*/
     public boolean insereFuncionario(Funcionario f) {
         try {
             String sql = "INSERT INTO FUNCIONARIO (cpf_funcionario, nome, endereco, sexo, salario, cargaH, login, senha) VALUES ('" + f.getCpf_funcionario() + "', '" + f.getNome() + "', '" + f.getEndereco()
@@ -48,6 +54,9 @@ public class FuncionarioDAO {
         }
     }
 
+    /*@ requires cod_func >= 0;
+    @ assignable st;
+	@*/
     public boolean removeFuncionario(int cod_func) {
         try {
             String sql = "DELETE FROM FUNCIONARIO "
@@ -62,6 +71,10 @@ public class FuncionarioDAO {
         }
     }
 
+    /*@ requires f != null;
+    @ requires cod_func >= 0;
+    @ assignable st;
+	@*/
     public boolean updateFuncionario(Funcionario f, int cod_func) {
         try {
             String sql = "UPDATE FUNCIONARIO "
@@ -80,6 +93,11 @@ public class FuncionarioDAO {
         }
     }
 
+    /*
+    @ requires cond_func >= 0;
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public Funcionario pesquisarFucionario(int cod_func) {
         Funcionario f = null;
         try {
@@ -108,6 +126,11 @@ public class FuncionarioDAO {
         return f;
     }
 
+    /*@
+    @ requires cpf != null && !cpf.equals("");
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public int pesquisarCodigoFucionario(String cpf) {
         Funcionario f = null;
         int cd = 0;
@@ -128,6 +151,12 @@ public class FuncionarioDAO {
         return cd;
     }
 
+    /*@
+    @ requires login != null && !login.equals("");
+    @ requires senha != null && !senha.equals("");
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public boolean pesquisarLoginFucionario(String login, String senha) {
         Funcionario f = null;
         boolean sucesso = false;
@@ -148,6 +177,11 @@ public class FuncionarioDAO {
         return sucesso;
     }
 
+    /*@
+    @ requires login != null && !login.equals("");
+    @ assignable st;
+    @ assignable rs;
+	@*/
     public int pesquisarCodigoFucionarioLogado(String login) {
         Funcionario f = null;
         int cd = 0;
@@ -168,6 +202,13 @@ public class FuncionarioDAO {
         return cd;
     }
 
+    /* @ assignable rs;
+    @ assignable st;
+    @ assignable conn;
+    @ ensures rs == null;
+    @ ensures st == null;
+    @ ensures conn == null;
+	@*/
     public void FecharConexoes() {
         try {
             if (rs != null) {

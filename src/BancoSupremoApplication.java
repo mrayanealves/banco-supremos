@@ -8,13 +8,12 @@
 import br.com.controles.ControleCliente;
 import br.com.controles.ControleFuncionario;
 import br.com.controles.ControleGerente;
-import br.com.models.Cliente;
-import br.com.models.Funcionario;
+import br.com.models.*;
 import br.com.telas.Deposito;
 import br.com.telas.Extrato;
 import br.com.telas.Saque;
 import br.com.telas.Transferencia;
-import br.com.auxilio.LimparCampos;
+import br.com.auxilio.*;
 import br.com.validacoes.ValidacoesCliente;
 import br.com.validacoes.ValidacoesConta;
 import br.com.validacoes.ValidacoesFuncionario;
@@ -200,11 +199,13 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         painelInicial.setPreferredSize(new java.awt.Dimension(706, 529));
         painelInicial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/logo/Logo Preta.png"))); // NOI18N
-        painelInicial.add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 122, 576, 202));
+        //labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/logo/logo_preta.png"))); // NOI18N
+        //painelInicial.add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 122, 576, 202));
 
         botaoEntrarLogin.setBackground(new java.awt.Color(0, 0, 0));
-        botaoEntrarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Entrar.png"))); // NOI18N
+        //botaoEntrarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Entrar.png"))); // NOI18N
+        botaoEntrarLogin.setText("Entrar");
+        botaoEntrarLogin.setForeground(new java.awt.Color(255, 255, 255));
         botaoEntrarLogin.setBorder(null);
         botaoEntrarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,8 +214,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelInicial.add(botaoEntrarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 83, -1));
 
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/slogan.png"))); // NOI18N
-        painelInicial.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 315, 460, 40));
+        //jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/slogan.png"))); // NOI18N
+        //painelInicial.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 315, 460, 40));
 
         painelPrincipal.add(painelInicial, "painelInicial");
 
@@ -228,7 +229,9 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         labelSenha.setText("Digite sua senha:");
 
         botaoEntrar.setBackground(new java.awt.Color(255, 255, 255));
-        botaoEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Entrar.png"))); // NOI18N
+        //botaoEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Entrar.png"))); // NOI18N
+        botaoEntrar.setText("Entrar");
+        botaoEntrar.setForeground(new java.awt.Color(0, 0, 0));
         botaoEntrar.setBorder(null);
         botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,9 +239,9 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/logo/Logo Preta.png"))); // NOI18N
+        //jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/logo/Logo Preta.png"))); // NOI18N
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/slogan.png"))); // NOI18N
+        //jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/slogan.png"))); // NOI18N
 
         javax.swing.GroupLayout painelLoginLayout = new javax.swing.GroupLayout(painelLogin);
         painelLogin.setLayout(painelLoginLayout);
@@ -298,7 +301,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         painelMenuGerente.setPreferredSize(new java.awt.Dimension(706, 529));
         painelMenuGerente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cadastrarNovaConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoCadastrarNovaConta.png"))); // NOI18N
+        //cadastrarNovaConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoCadastrarNovaConta.png"))); // NOI18N
+        cadastrarNovaConta.setText("Cadastrar Nova Conta");
         cadastrarNovaConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarNovaContaActionPerformed(evt);
@@ -306,7 +310,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(cadastrarNovaConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 180, 70));
 
-        realizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperações.png"))); // NOI18N
+        //realizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperações.png"))); // NOI18N
+        realizarOperacoes.setText("Realizar Operações");
         realizarOperacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 realizarOperacoesActionPerformed(evt);
@@ -314,7 +319,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(realizarOperacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 180, 70));
 
-        cadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoCadastrarFuncionário.png"))); // NOI18N
+        //cadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoCadastrarFuncionário.png"))); // NOI18N
+        cadastrarFuncionario.setText("Cadastrar Funcionário");
         cadastrarFuncionario.setBorder(null);
         cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,7 +329,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(cadastrarFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 170, 70));
 
-        sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/sair.png"))); // NOI18N
+        //sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/sair.png"))); // NOI18N
+        sair.setText("Sair");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairActionPerformed(evt);
@@ -331,10 +338,11 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 120, 50));
 
-        label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialLogin.png"))); // NOI18N
+        //label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialLogin.png"))); // NOI18N
         painelMenuGerente.add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(-15, 0, 740, 80));
 
-        botaoAtualizarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoVisualizarFuncionario.png"))); // NOI18N
+        //botaoAtualizarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoVisualizarFuncionario.png"))); // NOI18N
+        botaoAtualizarFuncionario.setText("Atualizar");
         botaoAtualizarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAtualizarFuncionarioActionPerformed(evt);
@@ -342,7 +350,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(botaoAtualizarFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 170, 70));
 
-        botaoAtualizarCliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoVisualizarCliente.png"))); // NOI18N
+        //botaoAtualizarCliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoVisualizarCliente.png"))); // NOI18N
+        botaoAtualizarCliente2.setText("Visualizar");
         botaoAtualizarCliente2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAtualizarCliente2ActionPerformed(evt);
@@ -350,11 +359,11 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuGerente.add(botaoAtualizarCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 170, 70));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
-        painelMenuGerente.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 710, 70));
+        //jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //painelMenuGerente.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 710, 70));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/palavraMenu.png"))); // NOI18N
-        painelMenuGerente.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 320, -1));
+        //jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/palavraMenu.png"))); // NOI18N
+        //painelMenuGerente.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 320, -1));
 
         painelPrincipal.add(painelMenuGerente, "painelMenuGerente");
 
@@ -364,7 +373,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         painelMenuFuncionario.setPreferredSize(new java.awt.Dimension(706, 529));
         painelMenuFuncionario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botaoCadastrarNovaConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoCadastrarNovaConta.png"))); // NOI18N
+        //botaoCadastrarNovaConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoCadastrarNovaConta.png"))); // NOI18N
+        botaoAtualizarCliente2.setText("Cadastrar");
         botaoCadastrarNovaConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarNovaContaActionPerformed(evt);
@@ -372,7 +382,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuFuncionario.add(botaoCadastrarNovaConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 234, 183, 70));
 
-        botaoAtualizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/atualizarCliente.png"))); // NOI18N
+        //botaoAtualizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/atualizarCliente.png"))); // NOI18N
+        botaoAtualizarCliente2.setText("Atualizar");
         botaoAtualizarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAtualizarClienteActionPerformed(evt);
@@ -380,19 +391,19 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuFuncionario.add(botaoAtualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 183, 74));
 
-        botaoRealizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperações.png"))); // NOI18N
+        //botaoRealizarOperacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoRealizarOperações.png"))); // NOI18N
         painelMenuFuncionario.add(botaoRealizarOperacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 234, 170, 70));
 
-        botaoSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/sair.png"))); // NOI18N
+        //botaoSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/sair.png"))); // NOI18N
         painelMenuFuncionario.add(botaoSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 141, 58));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialLogin.png"))); // NOI18N
+        //jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialLogin.png"))); // NOI18N
         painelMenuFuncionario.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 75));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
         painelMenuFuncionario.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 710, 70));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/palavraMenu.png"))); // NOI18N
+        //jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/palavraMenu.png"))); // NOI18N
         painelMenuFuncionario.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
 
         painelPrincipal.add(painelMenuFuncionario, "painelMenuFuncionario");
@@ -438,7 +449,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         campoCargaHFuncionario.setToolTipText("");
 
         botaoCadastrarFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        botaoCadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Cadastrar.png"))); // NOI18N
+        //botaoCadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Cadastrar.png"))); // NOI18N
+        botaoCadastrarFuncionario.setText("Cadastrar");
         botaoCadastrarFuncionario.setBorder(null);
         botaoCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -450,12 +462,13 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
 
         campoValorBonificacao.setEditable(false);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialnovoFuncionario.png"))); // NOI18N
+        //jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialnovoFuncionario.png"))); // NOI18N
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/preenchaCampos.png"))); // NOI18N
+        //jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/preenchaCampos.png"))); // NOI18N
 
         botaoVoltarCadastroFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        botaoVoltarCadastroFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        //botaoVoltarCadastroFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        botaoVoltarCadastroFuncionario.setText("Voltar");
         botaoVoltarCadastroFuncionario.setBorder(null);
         botaoVoltarCadastroFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -623,18 +636,19 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
 
         jLabel5.setText("* Endereço:");
 
-        botaoCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Cadastrar.png"))); // NOI18N
+        //botaoCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Cadastrar.png"))); // NOI18N
+        botaoCadastrarCliente.setText("Cadastrar");
         botaoCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarClienteActionPerformed(evt);
             }
         });
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialnovoCliente.png"))); // NOI18N
+        //jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialnovoCliente.png"))); // NOI18N
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/preenchaCampos.png"))); // NOI18N
+        //jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/preenchaCampos.png"))); // NOI18N
 
         sexo.add(radioFemininoCliente);
         radioFemininoCliente.setText("Feminino");
@@ -643,7 +657,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         radioMasculinoCliente.setText("Masculino");
 
         botaoVoltarCadastrarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        botaoVoltarCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        //botaoVoltarCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        botaoVoltarCadastrarCliente.setText("Voltar");
         botaoVoltarCadastrarCliente.setBorder(null);
         botaoVoltarCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -734,7 +749,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         painelCadastroConta.setPreferredSize(new java.awt.Dimension(706, 529));
 
         cadastrarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        cadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/No Cliente.png"))); // NOI18N
+        //cadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/No Cliente.png"))); // NOI18N
+        cadastrarCliente.setText("Ainda não é cliente");
         cadastrarCliente.setBorder(null);
         cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -748,19 +764,20 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialnovaConta.png"))); // NOI18N
+        //jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialnovaConta.png"))); // NOI18N
         jLabel27.setText("jLabel27");
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/preenchaCampos.png"))); // NOI18N
+        //jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/preenchaCampos.png"))); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
 
         jLabel35.setText("*CPF do Cliente: ");
 
         jLabel36.setText("*Senha para a conta: ");
 
         botaoCadastrar.setBackground(new java.awt.Color(255, 255, 255));
-        botaoCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Cadastrar.png"))); // NOI18N
+        //botaoCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Cadastrar.png"))); // NOI18N
+        botaoCadastrar.setText("Cadastrar");
         botaoCadastrar.setBorder(null);
         botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -769,7 +786,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
 
         botaoVoltarNovaConta.setBackground(new java.awt.Color(255, 255, 255));
-        botaoVoltarNovaConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        //botaoVoltarNovaConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        botaoVoltarNovaConta.setText("Voltar");
         botaoVoltarNovaConta.setBorder(null);
         botaoVoltarNovaConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -844,7 +862,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         painelMenuOperacoes.setPreferredSize(new java.awt.Dimension(706, 529));
         painelMenuOperacoes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Saque2.png"))); // NOI18N
+        //jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Saque2.png"))); // NOI18N
+        jButton2.setText("Saque");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -852,7 +871,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuOperacoes.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 190, 50));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Depósito2.png"))); // NOI18N
+        //jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Depósito2.png"))); // NOI18N
+        jButton3.setText("Depósito");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -860,7 +880,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuOperacoes.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 190, 50));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Transferência2.png"))); // NOI18N
+        //jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Transferência2.png"))); // NOI18N
+        jButton4.setText("Trânsferência");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -868,7 +889,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuOperacoes.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 210, 50));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/extrato2.png"))); // NOI18N
+        //jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/extrato2.png"))); // NOI18N
+        jButton5.setText("Extrato");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -876,7 +898,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuOperacoes.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 190, 50));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/cancelar.png"))); // NOI18N
+        //jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/cancelar.png"))); // NOI18N
+        jButton6.setText("Cancelar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -884,13 +907,13 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
         painelMenuOperacoes.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 190, 50));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
+        //jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialOperacoes.png"))); // NOI18N
         painelMenuOperacoes.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/palavraMenu.png"))); // NOI18N
+        //jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/palavraMenu.png"))); // NOI18N
         painelMenuOperacoes.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
         painelMenuOperacoes.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 720, -1));
 
         painelPrincipal.add(painelMenuOperacoes, "painelMenuOperacoes");
@@ -899,9 +922,9 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         painelVizualizarFuncionario.setMinimumSize(new java.awt.Dimension(706, 529));
         painelVizualizarFuncionario.setPreferredSize(new java.awt.Dimension(706, 529));
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialVisualizarFuncionario.png"))); // NOI18N
+        //jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialVisualizarFuncionario.png"))); // NOI18N
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
 
         jLabel39.setText("Nome: ");
 
@@ -926,7 +949,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         campoCargaHFuncionario1.setToolTipText("");
 
         botaoDeletarFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        botaoDeletarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Deletar.png"))); // NOI18N
+        //botaoDeletarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Deletar.png"))); // NOI18N
+        botaoDeletarFuncionario.setText("Deletar");
         botaoDeletarFuncionario.setBorder(null);
         botaoDeletarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -938,7 +962,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
 
         botaoAlterarFuncionario.setBackground(new java.awt.Color(255, 255, 255));
         botaoAlterarFuncionario.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAlterarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Alterar.png"))); // NOI18N
+        //botaoAlterarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Alterar.png"))); // NOI18N
+        botaoDeletarFuncionario.setText("Alterar");
         botaoAlterarFuncionario.setBorder(null);
         botaoAlterarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -949,7 +974,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         campoCpfFuncionario1.setEditable(false);
 
         botaoBuscar.setBackground(new java.awt.Color(255, 255, 255));
-        botaoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoBuscar.png"))); // NOI18N
+        //botaoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoBuscar.png"))); // NOI18N
+        botaoBuscar.setText("Buscar");
         botaoBuscar.setBorder(null);
         botaoBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -958,7 +984,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
 
         botaoVoltarVizualizacaoFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        botaoVoltarVizualizacaoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        //botaoVoltarVizualizacaoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        botaoVoltarVizualizacaoFuncionario.setText("Voltar");
         botaoVoltarVizualizacaoFuncionario.setBorder(null);
         botaoVoltarVizualizacaoFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1094,9 +1121,9 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         painelVizualizarCliente.setMaximumSize(new java.awt.Dimension(706, 529));
         painelVizualizarCliente.setPreferredSize(new java.awt.Dimension(706, 529));
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialVisualizarCliente.png"))); // NOI18N
+        //jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/menuInicialVisualizarCliente.png"))); // NOI18N
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
+        //jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/fundos/logoRodape.png"))); // NOI18N
 
         nomeCliente1.setText("Nome:");
 
@@ -1121,7 +1148,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
 
         botaoAlterarCliente.setBackground(new java.awt.Color(255, 255, 255));
         botaoAlterarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAlterarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Alterar.png"))); // NOI18N
+        //botaoAlterarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Alterar.png"))); // NOI18N
+        botaoAlterarCliente.setText("Alterar");
         botaoAlterarCliente.setBorder(null);
         botaoAlterarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1132,7 +1160,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         jLabel49.setText("Digite o CPF do cliente:");
 
         botaoBuscarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        botaoBuscarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoBuscar.png"))); // NOI18N
+        //botaoBuscarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/botaoBuscar.png"))); // NOI18N
+        botaoBuscarCliente.setText("Buscar");
         botaoBuscarCliente.setBorder(null);
         botaoBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1141,7 +1170,8 @@ public class BancoSupremoApplication extends javax.swing.JFrame {
         });
 
         botaoVoltarVizualizarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        botaoVoltarVizualizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        //botaoVoltarVizualizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/imagens/botoes/Voltar.png"))); // NOI18N
+        botaoVoltarVizualizarCliente.setText("Voltar");
         botaoVoltarVizualizarCliente.setBorder(null);
         botaoVoltarVizualizarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

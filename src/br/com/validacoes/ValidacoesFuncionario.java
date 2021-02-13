@@ -20,6 +20,17 @@ import javax.swing.JTextField;
  */
 public class ValidacoesFuncionario {
 
+	/*@ requires cpf != null && !cpf.equals("");
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires sexo != null && !sexo.equals("");
+    @ requires salario != null && !salario.equals("");
+    @ requires cargaH != null && !cargaH.equals("");
+    @ requires login != null && !login.equals("");
+    @ requires senha != null && !senha.equals("");
+    @ requires bon != null && !bon.equals("");
+    @ requires gerente == true || gerente == false;
+	@*/
     public void cadastrarFuncionario(String cpf, String nome, String endereco, String sexo, String salario, String cargaH, String login, String senha, String bon, boolean gerente) {
         ControleFuncionario cc = new ControleFuncionario();
 
@@ -45,6 +56,14 @@ public class ValidacoesFuncionario {
         }
     }
 
+    /*@ requires campoNomeFuncionario != null;
+	@ requires campoEnderecoFuncionario != null;
+	@ requires campoSalarioFuncionario != null;
+	@ requires campoCargaHFuncionario != null;
+	@ requires campoLoginFuncionario != null;
+	@ requires campoSenhaFuncionario != null;
+	@ requires campoCpfFuncionario != null;
+	@*/
     public boolean validarCamposCadastro(JTextField campoNomeFuncionario, JTextField campoEnderecoFuncionario,
             JTextField campoSalarioFuncionario, JTextField campoCargaHFuncionario,
             JTextField campoLoginFuncionario, JPasswordField campoSenhaFuncionario,
@@ -68,6 +87,8 @@ public class ValidacoesFuncionario {
         return sucesso;
     }
 
+    /*@ requires campoCodFuncionario != null;
+	@*/
     public boolean validarCamposCodigo(JTextField campoCodFuncionario) {
         boolean sucesso = false;
         VerificacaoCampos c = new VerificacaoCampos();
@@ -81,6 +102,12 @@ public class ValidacoesFuncionario {
         return sucesso;
     }
 
+    /*@ requires cod != null && !cod.equals("");
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires salario != null && !salario.equals("");
+    @ requires cargaH != null && !cargaH.equals("");
+	@*/
     public void atualizarFuncionario(String cod, String nome, String endereco, String salario, String cargaH) {
         ControleFuncionario cc = new ControleFuncionario();
         boolean existe;
@@ -100,6 +127,8 @@ public class ValidacoesFuncionario {
         }
     }
 
+    /*@ requires cod != null && !cod.equals("");
+	@*/
     public void deletarFuncionario(String cod) {
         ControleFuncionario cc = new ControleFuncionario();
         boolean existe = false;
@@ -120,6 +149,8 @@ public class ValidacoesFuncionario {
         }
     }
 
+    /*@ requires campoCodFuncionario != null;
+   	@*/
     public Funcionario buscarFuncionario(JTextField campoCodFuncionario) {
         Funcionario f = null;
         ControleFuncionario cc = new ControleFuncionario();

@@ -16,8 +16,13 @@ import javax.swing.JOptionPane;
  */
 public class ControleConta {
 
-    ContaDAO conta;
+	/*@ spec_public @*/ ContaDAO conta;
 
+    /*@ requires senha != null && !senha.equals("");
+    @ requires saldo!= null && !saldo.equals("");
+    @ requires cpf_cliente != null && !cpf_cliente.equals("");
+    @ assignable conta;
+	@*/
     public void cadastrarConta(String senha, String saldo, String cpf_cliente) {
         conta = new ContaDAO(1, "BANCO_SUPREMOS");
         Conta c = new Conta();
@@ -39,6 +44,9 @@ public class ControleConta {
         conta.FecharConexoes();
     }
 
+    /*@ requires senha != null && !senha.equals("");
+    @ assignable conta;
+	@*/
     public int recuperarCodigoConta(String senha) {
         conta = new ContaDAO(1, "BANCO_SUPREMOS");
         int cod;
@@ -48,6 +56,9 @@ public class ControleConta {
         return cod;
     }
 
+    /*@ requires num != null && !num.equals("");
+    @ assignable conta;
+	@*/
     public Conta obterConta(String num) {
         int num_conta = Integer.parseInt(num);
         Conta c = null;
@@ -58,6 +69,10 @@ public class ControleConta {
         return c;
     }
 
+    /*@ requires num_conta != null && !num_conta.equals("");
+     @ requires c != null;
+     @ assignable conta;
+	 @*/
     public boolean atualizarConta(Conta c, String num_conta) {
         conta = new ContaDAO(1, "BANCO_SUPREMOS");
         int num = Integer.parseInt(num_conta);
@@ -66,6 +81,9 @@ public class ControleConta {
         return sucesso;
     }
 
+    /*@ requires senha != null && !senha.equals("");
+    @ assignable conta;
+	@*/
     public boolean existeSenha(String senha) {
         conta = new ContaDAO(1, "BANCO_SUPREMOS");
         boolean existe;
@@ -82,6 +100,9 @@ public class ControleConta {
         return existe;
     }
 
+    /*@ requires num != null && !num.equals("");
+    @ assignable conta;
+	@*/
     public boolean existeConta(String num) {
         int num_conta = Integer.parseInt(num);
         boolean existe = false;
@@ -99,6 +120,10 @@ public class ControleConta {
         return existe;
     }
 
+    /*@ requires num != null && !num.equals("");
+    @ requires senha != null && !senha.equals("");
+    @ assignable conta;
+	@*/
     public boolean senhaValida(String num, String senha) {
         int num_conta = Integer.parseInt(num);
         boolean valida = false;
@@ -116,6 +141,9 @@ public class ControleConta {
         return valida;
     }
 
+    /*@ requires num != null && !num.equals("");
+    @ assignable conta;
+	@*/
     public double pegarSaldo(String num) {
         int numero = Integer.parseInt(num);
         conta = new ContaDAO(1, "BANCO_SUPREMOS");
@@ -126,6 +154,10 @@ public class ControleConta {
         return saldo;
     }
 
+    /*@ requires num != null && !num.equals("");
+    @ requires valor != null && !valor.equals("");
+    @ assignable conta;
+	@*/
     public boolean valorValido(String num, String valor) {
         int num_conta = Integer.parseInt(num);
         double valorSaque = Double.parseDouble(valor);

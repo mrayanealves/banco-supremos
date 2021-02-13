@@ -16,8 +16,18 @@ import javax.swing.JOptionPane;
  */
 public class ControleFuncionario {
 
-    FuncionarioDAO func;
+	/*@ spec_public @*/FuncionarioDAO func;
 
+	/*@ requires cpf_cliente != null && !cpf_cliente.equals("");
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires sexo != null && !sexo.equals("");
+    @ requires salario != null && !salario.equals("");
+    @ requires cargaH != null && !cargaH.equals("");
+    @ requires login != null && !login.equals("");
+    @ requires senha != null && !senha.equals("");
+    @ assignable func;
+	@*/
     public void cadastrarFuncionario(String cpf_cliente, String nome, String endereco, String sexo, String salario, String cargaH, String login, String senha) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         Funcionario f = new Funcionario();
@@ -47,6 +57,9 @@ public class ControleFuncionario {
         func.FecharConexoes();
     }
 
+    /*@ requires cpf != null && !cpf.equals("");
+    @ assignable func;
+	@*/
     public int recuperarCodigoFuncionario(String cpf) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         int cod;
@@ -56,6 +69,9 @@ public class ControleFuncionario {
         return cod;
     }
 
+    /*@ requires cod != null && !cod.equals("");
+    @ assignable func;
+	@*/
     public Funcionario vizualizarFuncionario(String cod) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         Funcionario f = null;
@@ -65,6 +81,13 @@ public class ControleFuncionario {
         return f;
     }
 
+    /*@ requires cod_func != null && !cod_func.equals("");
+    @ requires nome!= null && !nome.equals("");
+    @ requires endereco != null && !endereco.equals("");
+    @ requires salario != null && !salario.equals("");
+    @ requires cargaH != null && !cargaH.equals("");
+    @ assignable func;
+	@*/
     public boolean atualizarFuncionario(String cod_func, String nome, String endereco, String salario, String cargaH) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         boolean sucesso = false;
@@ -85,6 +108,9 @@ public class ControleFuncionario {
         return sucesso;
     }
 
+    /*@ requires cod != null && !cod.equals("");
+    @ assignable func;
+	@*/
     public boolean deletarFuncionario(String cod) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         int cod_func = Integer.parseInt(cod);
@@ -95,6 +121,9 @@ public class ControleFuncionario {
         return sucesso;
     }
 
+    /*@ requires login != null && !login.equals("");
+    @ assignable func;
+	@*/
     public int recuperarCodLogado(String login) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         int cod = 0;
@@ -104,6 +133,9 @@ public class ControleFuncionario {
         return cod;
     }
 
+    /*@ requires cod != null && !cod.equals("");
+    @ assignable func;
+	@*/
     public boolean existeCodFuncionario(String cod) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         int c = Integer.parseInt(cod);
@@ -120,6 +152,9 @@ public class ControleFuncionario {
         return existe;
     }
 
+    /*@ requires cpf != null && !cpf.equals("");
+    @ assignable func;
+	@*/
     public boolean existeFuncionario(String cpf) {
         func = new FuncionarioDAO(1, "BANCO_SUPREMOS");
         boolean existe = false;

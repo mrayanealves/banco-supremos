@@ -11,6 +11,7 @@ package br.com.models;
  * @author Rayane
  */
 public class Cliente {
+	
     private String cpf_cliente;
     private String nome;
     private String endereco;

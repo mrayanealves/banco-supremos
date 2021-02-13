@@ -14,8 +14,12 @@ import br.com.models.Gerente;
  */
 public class ControleGerente {
 
-    GerenteDAO ger;
+/*@ spec_public @*/ GerenteDAO ger;
 
+    /*@ requires cod_func > 0;
+      @ requires valor != null && !valor.equals("");
+      @ assignable ger;
+    @*/
     public void cadastrarGerente(int cod_func, String valor) {
         ger = new GerenteDAO(1, "BANCO_SUPREMOS");
         Gerente g = new Gerente();
@@ -29,6 +33,9 @@ public class ControleGerente {
         ger.FecharConexoes();
     }
 
+    /*@ requires cod_func > 0;
+    @ assignable ger;
+	  @*/
     public boolean ehGerente(int cod_func) {
         ger = new GerenteDAO(1, "BANCO_SUPREMOS");
         Gerente g = null;

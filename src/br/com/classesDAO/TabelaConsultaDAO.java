@@ -20,12 +20,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TabelaConsultaDAO {
 
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/Connection conn;
+	/*@ spec_public @*/Statement st;
+	/*@ spec_public @*/ResultSet rs;
     private DefaultTableModel modelo = new DefaultTableModel();
 
-    public TabelaConsultaDAO(int flag, String NomeBanco) {
+    /*@ requires flag == 1;
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
+	@*/
+    public TabelaConsultaDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();

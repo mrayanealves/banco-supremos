@@ -19,11 +19,14 @@ import br.com.models.Gerente;
  */
 public class GerenteDAO {
 
-    Connection conn;
-    Statement st;
-    ResultSet rs;
+	/*@ spec_public @*/Connection conn;
+	/*@ spec_public @*/Statement st;
+	/*@ spec_public @*/ResultSet rs;
 
-    public GerenteDAO(int flag, String NomeBanco) {
+	/*@ requires flag == 1;
+    @ requires nomeBanco != null && nomeBanco.equals("BANCO_SUPREMO");
+	@*/
+    public GerenteDAO(int flag, String nomeBanco) {
         conn = new ConnectionFactory().getConnection(flag);
         try {
             st = conn.createStatement();
